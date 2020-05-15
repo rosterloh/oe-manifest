@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch="https://github.com" name="github"/>
-  <remote fetch="https://git.openembedded.org" name="oe"/>
-  <remote fetch="https://github.com/STMicroelectronics" name="OpenSTLinux"/>
   
-  <default remote="OpenSTLinux" sync-j="4"/>
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="https://github.com/Freescale" name="freescale"/>
+  <remote fetch="https://github.com/openembedded" name="oe"/>
+  <remote fetch="https://github.com/OSSystems" name="oss"/>
+  <remote fetch="https://github.com/meta-rust" name="rust"/>
+  <remote fetch="https://code.qt.io/yocto" name="playground"/>
+  <remote fetch="https://github.com/kraj" name="clang"/>
+  <remote fetch="git@github.com:rosterloh" name="rosterloh"/>
   
-  <project name="TimesysGit/meta-timesys" path="layers/meta-timesys" remote="github" revision="031d6eb674c76b1d9dabdc93cbff4adb10c7cebb"/>
-  <project name="bitbake" path="layers/openembedded-core/bitbake" remote="oe" revision="4ce92f43eeac6a4bfd06e8567fa6891614b5b3b0"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="9b3b907f30b0d5b92d58c7e68289184fda733d3e"/>
-  <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github" revision="1520d5b2b2beec5e1c3209d3178219e93ef08bca"/>
-  <project name="kraj/meta-clang" path="layers/meta-clang" remote="github" revision="thud"/>
-  <project name="devicetree-addons" path="layers/meta-st/meta-st-stm32mp-addons/devicetree-addons" revision="thud"/>
-  <project name="meta-st-openstlinux" path="layers/meta-st/meta-st-openstlinux" revision="thud"/>
-  <project name="meta-st-stm32mp" path="layers/meta-st/meta-st-stm32mp" revision="thud"/>
-  <project name="meta-st-stm32mp-addons" path="layers/meta-st/meta-st-stm32mp-addons" revision="thud"/>
-  <project name="meta-st-stm32mpu-ai" path="layers/meta-st/meta-st-stm32mpu-ai" revision="thud"/>
-  <project name="meta-st-stm32mpu-app-logicanalyser" path="layers/meta-st/meta-st-stm32mpu-app-logicanalyser" revision="thud"/>
-  <project name="meta-st-scripts" path="layers/meta-st/scripts" revision="thud"/>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="d3d3f443039b03f1200a14bfe99f985592632018"/>
+  <default revision="master" sync-j="4"/>
+  
+  <project remote="rosterloh" revision="thor96" name="oe-manifest" path="conf">
+	  <copyfile dest="README" src="README"/>
+	  <copyfile dest="setup-environment" src="setup-environment"/>
+  </project>
+  <project remote="yocto" revision="zeus" name="poky" path="sources/poky"/>
+  <project remote="yocto" revision="zeus" name="meta-freescale" path="sources/meta-freescale"/>
+  <project remote="oe" revision="zeus" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="freescale" revision="zeus" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
+  <project remote="freescale" revision="zeus" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
+  <project remote="freescale" revision="zeus" name="Documentation" path="sources/Documentation"/>
+  <project remote="oss" name="meta-browser" path="sources/meta-browser"/>
+  <project remote="playground" revision="upstream/zeus" name="meta-qt5" path="sources/meta-qt5"/>
+  <project remote="rosterloh" revision="zeus" name="meta-rosterloh" path="sources/meta-rosterloh"/>
+  <project remote="rust"  name="meta-rust" path="sources/meta-rust"/>
+  <project remote="clang" revision="zeus" name="meta-clang" path="sources/meta-clang"/>
 
 </manifest>
